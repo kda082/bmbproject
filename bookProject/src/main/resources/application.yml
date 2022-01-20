@@ -1,0 +1,98 @@
+spring:
+  profiles:
+    active: test
+
+---
+spring:
+  mustache:
+    prefix: classpath:/templates/
+    suffix: .html
+  config:
+    activate:
+      on-profile: test
+  servlet:
+    multipart:
+      enabled: true
+      location: ${java.io.tmpdir}
+      max-file-size: -1
+      max-request-size: -1
+
+
+  session:
+    store-type: jdbc
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3366/bmb
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  messages:
+    basename: messages,ValidationMessages,PropertyNames
+    cache-duration: -1
+    encoding: UTF-8
+
+server:
+  port: 8077
+  servlet:
+    context-path: '/'
+    session:
+      timeout: 60000m
+  error:
+    path: '/error'
+    whitelabel:
+      enabled: false
+      
+mybatis:
+  type-aliases-package: com.go.bmb
+  mapper-locations: mapper/**/*.xml 
+  
+       
+
+---
+
+---
+spring:
+  mustache:
+    prefix: classpath:/templates/ 
+    suffix: .html
+  config:
+    activate:
+      on-profile: real
+  servlet:
+    multipart:
+      enabled: true
+      location: ${java.io.tmpdir}
+      max-file-size: -1
+      max-request-size: -1
+
+  session:
+    store-type: jdbc
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/
+    username: nams
+    password: namsnams
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  messages:
+    basename: messages,ValidationMessages,PropertyNames
+    cache-duration: -1
+    encoding: UTF-8
+
+server:
+  port: 8080
+  servlet:
+    context-path: '/'
+    session:
+      timeout: 60000m
+  error:
+    path: '/error'
+    whitelabel:
+      enabled: false
+            
+mybatis:
+  type-aliases-package: com.go.bmb
+  mapper-locations: mapper/**/*.xml 
+  
+---
