@@ -19,7 +19,7 @@ var main = {
 	  
 	  //테스트버튼
 	  $("#testMenuBtn").on("click", function () {
-		  alert("테스트버튼");
+		  $('#main').load('/app/book/web/test');  
       });
 
 

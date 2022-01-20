@@ -11,4 +11,9 @@ public class bookController {
 		return "book/bookList";	
 	}
 	
+	
+	@GetMapping("/app/book/web/test")
+	public String moveTest() {
+		return "book/test";	
+	}
 }
