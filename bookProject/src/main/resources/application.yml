@@ -5,7 +5,6 @@ spring:
 ---
 spring:
   mustache:
-    prefix: classpath:/templates/
     suffix: .html
   config:
     activate:
@@ -22,10 +21,10 @@ spring:
     store-type: jdbc
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3366/bmb
-    username: root
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+    username: system
     password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: oracle.jdbc.driver.OracleDriver
 
   messages:
     basename: messages,ValidationMessages,PropertyNames
@@ -54,7 +53,6 @@ mybatis:
 ---
 spring:
   mustache:
-    prefix: classpath:/templates/ 
     suffix: .html
   config:
     activate:
@@ -70,10 +68,10 @@ spring:
     store-type: jdbc
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/
-    username: nams
-    password: namsnams
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+    username: system
+    password: 1234
+    driver-class-name: oracle.jdbc.driver.OracleDriver
 
   messages:
     basename: messages,ValidationMessages,PropertyNames

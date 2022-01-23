@@ -1,6 +1,6 @@
 var book = {
     init : function () {
-    	book.getList();
+    	//book.getList();
     },
     getList : function(){
 	     $.ajax({

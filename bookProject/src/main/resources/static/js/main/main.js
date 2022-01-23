@@ -17,11 +17,13 @@ var main = {
 		  $('#main').load('/app/book/web/bookList');
       });
 	  
-	  //테스트버튼
-	  $("#testMenuBtn").on("click", function () {
-		  $('#main').load('/app/book/web/test');  
+	  //게시판버튼
+	  $("#boardMenuBtn").on("click", function () {
+		  $(document).off(); // 동적 이벤트 초기화
+		  $('#main').load('/app/board/web/board');
       });
-
+	  
+	  
 
     }
 }
